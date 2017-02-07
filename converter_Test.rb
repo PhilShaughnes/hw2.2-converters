@@ -1,6 +1,5 @@
 require 'minitest/autorun'
 require './converter'
-require 'pry'
 
 class ConverterTest < MiniTest::Test
 
