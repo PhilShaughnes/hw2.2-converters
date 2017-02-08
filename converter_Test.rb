@@ -1,5 +1,21 @@
 require 'minitest/autorun'
 require './converter'
+=begin
+So, let's write some tests.
+
+Each method (other than the attr_accessor methods and initialize) should have at least one associated test in converter_test.rb
+Those tests should pass. Of note: Some of these methods have bugs in them. If you run into one, fix it.
+
+Adventure Mode
+ Write a converter method for days into years. Write the test(s) for this method first. For our purposes, a year is 365.25 days (leap days)
+Write the opposite conversion, again while writing the tests first.
+Write two other conversions of your choice.
+
+Epic Mode
+Use your now thoroughly tested class in a command line tool. Ask the user for a number and unit, then convert it to it's companion.
+If a unit has more than one companion, ask the user which unit they'd like to convert it into.
+Use the ruby-tty tools for the above
+=end
 
 class ConverterTest < MiniTest::Test
 
