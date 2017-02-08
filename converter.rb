@@ -8,13 +8,13 @@ class Converter
     @number = number.to_f
   end
 
-  def c_to_f
+  def celcius_to_fahrenheit
    # Multiply by 9, then divide by 5, then add 32
    # For instance, 12C == 53.6F
    (((number * 9)/5) + 32).round(4)
   end
 
-  def f_to_c
+  def fahrenheit_to_celcius
     # Deduct 32, then multiply by 5, then divide by 9
     # For instance, 23F == -5C
     (((number - 32) * 5)/9).round(4)
