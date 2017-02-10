@@ -1,12 +1,13 @@
 require './converter'
 require 'tty'
+require 'pry'
 
 prompt = TTY::Prompt.new
 
 def getnum #is this or a while loop better? It gets a number from the user.
   print "Please input your number: "
   num = $stdin.gets.chomp
-  num.to_i.to_s != num ? getnum : num
+  num.to_s == 0 ? getnum : num.to_f
 end
 
 #all the options for conversion available in the Converter class are in this Hash.
@@ -15,13 +16,16 @@ convlist = {celcius: "celcius_to_fahrenheit",
             quarts: "quarts_to_cups",
             cups: "cups_to_quarts",
             inches: "inches_to_feet",
-            feet: {inches: "feet_to_inches", miles: "feet_to_miles", meters: "feet_to_meters"},
+            feet: {inches: "feet_to_inches",
+                  miles: "feet_to_miles",
+                  meters: "feet_to_meters"},
             milliseconds: "milliseconds_to_seconds",
             seconds: "seconds_to_milliseconds",
             miles: "miles_to_feet",
             meters: "meters_to_feet",
             ounces: "ounce_to_gram",
-            grams: {pounds: "gram_to_pound", ounces: "gram_to_ounce"}
+            grams: {pounds: "gram_to_pound",
+                    ounces: "gram_to_ounce"}
             }
 
 # cool display header thingy
@@ -41,3 +45,5 @@ while prompt.yes?('Would you like to convert a number?')
 
   puts "#{num} was converted to #{result} using #{meth}"
 end
+
+binding pry
